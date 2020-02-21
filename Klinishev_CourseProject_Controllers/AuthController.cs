@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Klinishev_CourseProject_Controllers
 {
-    public class Class1
+    public class AuthController
     {
     }
 }

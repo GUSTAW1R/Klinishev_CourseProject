@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Klinishev_CourseProject_Models
+namespace Klinishev_CourseProject_Controllers
 {
-    public class Class1
+    public class RegistController
     {
+
     }
 }
