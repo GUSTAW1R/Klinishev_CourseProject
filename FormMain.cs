@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Klinishev_CourseProject_Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,6 @@ namespace Klinishev_CourseProject_View
 {
     public partial class FormMain : Form
     {
-
         public FormMain()
         {
             InitializeComponent();
@@ -20,7 +20,9 @@ namespace Klinishev_CourseProject_View
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-
+            
         }
+
+
     }
 }
