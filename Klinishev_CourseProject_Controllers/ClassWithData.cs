@@ -12,6 +12,7 @@ namespace Klinishev_CourseProject_View
     {
         private SQLiteConnection connection;
         private string sPath = "C:\\Users\\Gustaw R\\source\\repos\\Klinishev_CourseProject_View\\Klinishev_CourseProject_Models\\KlinishevCourseProjectDB.db";
+        public string[] Years = new string[] { "2019", "2020" };
         public ClassWithData()
         {
             string ConnectionString = @"Data Source=" + sPath + ";New=False;Version=3;DateTimeFormat=UnixEpoch";
@@ -61,6 +62,15 @@ namespace Klinishev_CourseProject_View
                 getDealName.CommandText = "select FIO from Customers WHERE Id = '" + i + "'";
                 string DealName = Convert.ToString(getDealName.ExecuteScalar());
                 comboBox.Items.Add(DealName);
+            }
+            return comboBox;
+        }
+
+        public ComboBox fillYears(ComboBox comboBox)
+        {
+            for(int i=0; i < Years.Length; i++)
+            {
+                comboBox.Items.Add(Years[i]);
             }
             return comboBox;
         }

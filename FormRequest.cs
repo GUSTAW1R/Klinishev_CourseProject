@@ -26,8 +26,31 @@ namespace Klinishev_CourseProject_View
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            var form = new FormAddRequest();
-            form.Show();
+            try
+            {
+                var form = new FormAddRequest();
+                form.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка при добавлении");
+            }
+            dataGridView.DataSource = requestController.getRequestList();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dataGridView.DataSource = requestController.selectionByCustomer(dateTimePicker1.Value.Date, dateTimePicker2.Value.Date);
+        }
+
+        private void buttonSortType_Click(object sender, EventArgs e)
+        {
+            dataGridView.DataSource = requestController.selectionByType(dateTimePicker1.Value.Date, dateTimePicker2.Value.Date);
+        }
+
+        private void buttonDel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

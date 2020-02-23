@@ -74,7 +74,7 @@ namespace Klinishev_CourseProject_Controllers
             List<Request> RequestList = new List<Request>();
             using (SQLiteCommand sqlcmd = connection.CreateCommand())
             {
-                sqlcmd.CommandText = @"SELECT Id, IdCustomer, Type, Count, Date FROM Request WHERE Data >= " + dateTime1 + " AND Date >= " + dateTime2 + " ORDER BY Type ASC";
+                sqlcmd.CommandText = @"SELECT Id, IdCustomer, Type, Count, Date FROM Request WHERE Date >= " + convertToUnix(dateTime1) + " AND Date <= " + convertToUnix(dateTime2) + " ORDER BY IdCustomer ASC";
                 sqlcmd.CommandType = CommandType.Text;
                 SQLiteDataReader r = sqlcmd.ExecuteReader();
                 while (r.Read())
@@ -90,7 +90,7 @@ namespace Klinishev_CourseProject_Controllers
             List<Request> RequestList = new List<Request>();
             using (SQLiteCommand sqlcmd = connection.CreateCommand())
             {
-                sqlcmd.CommandText = @"SELECT Id, IdCustomer, Type, Count, Date FROM Request WHERE Data >= "+dateTime1+" AND Date >= "+dateTime2+" ORDER BY Type ASC";
+                sqlcmd.CommandText = @"SELECT Id, IdCustomer, Type, Count, Date FROM Request WHERE Date >= "+convertToUnix(dateTime1)+" AND Date <= "+ convertToUnix(dateTime2) + " ORDER BY Type ASC";
                 sqlcmd.CommandType = CommandType.Text;
                 SQLiteDataReader r = sqlcmd.ExecuteReader();
                 while (r.Read())

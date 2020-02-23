@@ -11,7 +11,7 @@ namespace Klinishev_CourseProject_Models
     {
         [DisplayName("Уникальный номер")]
         public int Id { set; get; }
-        [DisplayName("Номер поставщика")]
+        [DisplayName("Номер заказчика")]
         public int IdCustomer { set; get; }
         [DisplayName("Тип продукции")]
         public string Type { set; get; }
