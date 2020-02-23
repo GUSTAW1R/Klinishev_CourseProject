@@ -27,7 +27,7 @@ namespace Klinishev_CourseProject_Controllers
             List<PriceList> PriceList = new List<PriceList>();
             using (SQLiteCommand sqlcmd = connection.CreateCommand())
             {
-                sqlcmd.CommandText = @"SELECT Id, Type, Price FROM Customers";
+                sqlcmd.CommandText = @"SELECT Id, Type, Price FROM PriceList";
                 sqlcmd.CommandType = CommandType.Text;
                 SQLiteDataReader r = sqlcmd.ExecuteReader();
                 while (r.Read())
@@ -38,7 +38,7 @@ namespace Klinishev_CourseProject_Controllers
             return PriceList;
         }
 
-        public void AddCustomer(string Type, string Price)
+        public void AddPriceList(string Type, string Price)
         {
 
                 priceList.Type = Type; priceList.Price = Convert.ToInt32(Price);
@@ -52,11 +52,10 @@ namespace Klinishev_CourseProject_Controllers
                 {
                     priceList.Id = 0;
                 }
-                string txtSQLQuery = "INSERT INTO PriceList (Id, Type, Price) values('" + (priceList.Id + 1) + "', '" + priceList.Price + "')";
+                string txtSQLQuery = "INSERT INTO PriceList (Id, Type, Price) values('" + (priceList.Id + 1) + "', '" + priceList.Type + "', '" + priceList.Price + "')";
                 SQLiteCommand addEntries = connection.CreateCommand();
                 addEntries.CommandText = txtSQLQuery;
                 addEntries.ExecuteNonQuery();
-                MessageBox.Show("Товар в прайс-лист успешно добавлен", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
         }
 
@@ -70,7 +69,7 @@ namespace Klinishev_CourseProject_Controllers
             addEntries.ExecuteNonQuery();
         }
 
-        public string GetCompetitorData(DataGridView dataGridView, string Data)
+        public string GetPriceListData(DataGridView dataGridView, string Data)
         {
             int CurrentRow = dataGridView.SelectedCells[0].RowIndex;
             string valueId = dataGridView[0, CurrentRow].Value.ToString();
@@ -92,7 +91,7 @@ namespace Klinishev_CourseProject_Controllers
             return data;
         }
 
-        public void RefreshCompetitor(DataGridView dataGridView, string Type, string Price)
+        public void RefreshPriceList(DataGridView dataGridView, string Type, string Price)
         {
             int CurrentRow = dataGridView.SelectedCells[0].RowIndex;
             string Id = dataGridView[0, CurrentRow].Value.ToString();

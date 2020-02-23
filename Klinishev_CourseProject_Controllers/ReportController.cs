@@ -94,7 +94,7 @@ namespace Klinishev_CourseProject_Controllers
             return dataGridView;
         }
 
-        public void ExportFile(DataGridView dataGridView, DateTime dateTime1, DateTime dateTime2, string fileName)
+        public void ExportFile(DataGridView dataGridView, string year, string fileName)
         {
             SQLiteCommand getCount2 = connection.CreateCommand();
             getCount2.CommandText = "select COUNT(Type) from Request";
@@ -134,7 +134,7 @@ namespace Klinishev_CourseProject_Controllers
                 paragraph = document.Paragraphs.Add(missing);
                 range = paragraph.Range;
                 //задаем текст
-                range.Text = dateTime1.ToString("dd/MM/yyyy") + " - " + dateTime2.ToString("dd/MM/yyyy");
+                range.Text = "Год: " + year;
                 //задаем настройки шрифта
                 font = range.Font;
                 font.Size = 16;

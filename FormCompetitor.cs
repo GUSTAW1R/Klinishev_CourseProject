@@ -65,7 +65,7 @@ namespace Klinishev_CourseProject_View
             }
             catch
             {
-
+                MessageBox.Show("Ошибка при обновлении конкурента", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             buttonAdd.Enabled = true;
             buttonDel.Enabled = true;

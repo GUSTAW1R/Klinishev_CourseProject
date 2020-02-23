@@ -32,7 +32,24 @@ namespace Klinishev_CourseProject_View
 
         private void buttonExport_Click(object sender, EventArgs e)
         {
-
+            SaveFileDialog sfd = new SaveFileDialog
+            {
+                Filter = "doc|*.doc|docx|*.docx"
+            };
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    reportController.ExportFile(dataGridView, comboBoxYear.SelectedItem.ToString(), sfd.FileName);
+                    MessageBox.Show("Выполнено", "Успех", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
+                   MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
