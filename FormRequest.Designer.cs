@@ -33,6 +33,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonDel = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,8 +45,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonName = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonFind = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -55,7 +58,7 @@
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(20, 174);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(750, 303);
+            this.dataGridView.Size = new System.Drawing.Size(1012, 303);
             this.dataGridView.TabIndex = 0;
             // 
             // buttonAdd
@@ -105,6 +108,24 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Выборка заявок с сортировкой по...";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(172, 30);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(26, 13);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "ПО:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 30);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(17, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "С:";
             // 
             // dateTimePicker2
             // 
@@ -196,29 +217,40 @@
             this.buttonName.UseVisualStyleBackColor = true;
             this.buttonName.Click += new System.EventHandler(this.buttonName_Click);
             // 
-            // label5
+            // textBox1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 30);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(17, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "С:";
+            this.textBox1.Location = new System.Drawing.Point(810, 48);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(123, 20);
+            this.textBox1.TabIndex = 9;
             // 
-            // label6
+            // buttonFind
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(172, 30);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 13);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "ПО:";
+            this.buttonFind.Location = new System.Drawing.Point(813, 92);
+            this.buttonFind.Name = "buttonFind";
+            this.buttonFind.Size = new System.Drawing.Size(89, 25);
+            this.buttonFind.TabIndex = 10;
+            this.buttonFind.Text = "Найти";
+            this.buttonFind.UseVisualStyleBackColor = true;
+            this.buttonFind.Click += new System.EventHandler(this.buttonFind_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(813, 21);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(217, 13);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Найти заказчиков по названию продукта";
             // 
             // FormRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 489);
+            this.ClientSize = new System.Drawing.Size(1044, 489);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.buttonFind);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.buttonName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -257,5 +289,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonName;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button buttonFind;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -70,5 +70,10 @@ namespace Klinishev_CourseProject_View
         {
             MessageBox.Show(requestController.getNameByIdCustomer(dataGridView));
         }
+
+        private void buttonFind_Click(object sender, EventArgs e)
+        {
+            dataGridView.DataSource = requestController.getRequestByProduct(textBox1.Text);
+        }
     }
 }

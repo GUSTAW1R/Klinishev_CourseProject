@@ -135,6 +135,22 @@ namespace Klinishev_CourseProject_Controllers
             string data = Convert.ToString(getData1.ExecuteScalar());
             return data;
         }
+        public List<Request> getRequestByProduct(string Name)
+        {
+            List<Request> RequestList = new List<Request>();
+            using (SQLiteCommand sqlcmd = connection.CreateCommand())
+            {
+                sqlcmd.CommandText = @"SELECT Id, IdCustomer, Type, Count, Date FROM Request WHERE Type = '"+Name+"'";
+                sqlcmd.CommandType = CommandType.Text;
+                SQLiteDataReader r = sqlcmd.ExecuteReader();
+                while (r.Read())
+                {
+                    RequestList.Add(new Request { Id = Convert.ToInt32(r["Id"]), IdCustomer = Convert.ToInt32(r["IdCustomer"]), Type = Convert.ToString(r["Type"]), Count = Convert.ToInt32(r["Count"]), Date = Convert.ToDateTime(r["Date"]) });
+                }
+            }
+
+            return RequestList;
+        }
         private string convertToUnix(DateTime date)
         {
             string unixTime = (date - new System.DateTime(1970, 1, 1, 0, 0, 0, 0)).TotalSeconds.ToString();
