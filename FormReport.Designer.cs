@@ -92,7 +92,7 @@
             this.Controls.Add(this.comboBoxYear);
             this.Controls.Add(this.dataGridView);
             this.Name = "FormReport";
-            this.Text = "FormReport";
+            this.Text = "Работа с отчётностью";
             this.Load += new System.EventHandler(this.FormReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);

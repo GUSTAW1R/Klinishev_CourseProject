@@ -203,7 +203,7 @@
             this.Controls.Add(this.buttonDel);
             this.Controls.Add(this.dataGridView);
             this.Name = "FormPriceList";
-            this.Text = "FormPriceList";
+            this.Text = "Работа с прайс-листом";
             this.Load += new System.EventHandler(this.FormPriceList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);

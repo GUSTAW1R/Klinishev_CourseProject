@@ -147,7 +147,7 @@
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.dataGridView);
             this.Name = "FormCompetitor";
-            this.Text = "FormCompetitor";
+            this.Text = "Работа с конкурентами";
             this.Load += new System.EventHandler(this.FormCompetitor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);

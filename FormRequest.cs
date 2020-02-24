@@ -50,7 +50,25 @@ namespace Klinishev_CourseProject_View
 
         private void buttonDel_Click(object sender, EventArgs e)
         {
+            try
+            {
+                requestController.DelRequest(dataGridView);
+                MessageBox.Show("Заявка успешно удалена", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка при удалении заявки", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+        private void buttonINN_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(requestController.getINNbyIdCustomer(dataGridView));
+        }
+
+        private void buttonName_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(requestController.getNameByIdCustomer(dataGridView));
         }
     }
 }

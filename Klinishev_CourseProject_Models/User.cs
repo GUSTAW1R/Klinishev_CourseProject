@@ -9,9 +9,9 @@ namespace Klinishev_CourseProject_Models
     public class User
     {
         public int Id { set; get; }
-        public int Name { set; get; }
-        public int Login { set; get; }
-        public int Password { set; get; }
+        public string Name { set; get; }
+        public string Login { set; get; }
+        public string Password { set; get; }
 
     }
 }

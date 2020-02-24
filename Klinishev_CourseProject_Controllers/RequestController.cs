@@ -47,9 +47,15 @@ namespace Klinishev_CourseProject_Controllers
             addEntries.CommandText = txtSQLQuery;
             addEntries.ExecuteNonQuery();
         }
-        public void RefRequest(string Type, string Count, DateTime Date, string IdCustomer)
+        public void DelRequest(DataGridView dataGridView)
         {
-
+            int CurrentRow = dataGridView.SelectedCells[0].RowIndex;
+            string Id = dataGridView[0, CurrentRow].Value.ToString();
+            request.Id = Convert.ToInt32(Id);
+            string txtSQLQuery = "DELETE FROM Request WHERE Id = " + request.Id + "";
+            SQLiteCommand addEntries = connection.CreateCommand();
+            addEntries.CommandText = txtSQLQuery;
+            addEntries.ExecuteNonQuery();
         }
 
         public List<Request> getRequestList()
@@ -100,6 +106,34 @@ namespace Klinishev_CourseProject_Controllers
             }
 
             return RequestList;
+        }
+
+        public string getINNbyIdCustomer(DataGridView dataGridView)
+        {
+            int CurrentRow = dataGridView.SelectedCells[0].RowIndex;
+            string valueId = dataGridView[0, CurrentRow].Value.ToString();
+            SQLiteCommand getData = connection.CreateCommand();
+            getData.CommandText = "select IdCustomer from Request WHERE Id = '" + valueId + "'";
+            string id = Convert.ToString(getData.ExecuteScalar());
+            request.IdCustomer = Convert.ToInt32(id);
+            SQLiteCommand getData1 = connection.CreateCommand();
+            getData1.CommandText = "select INN from Customers WHERE Id = '" + request.IdCustomer + "'";
+            string data = Convert.ToString(getData1.ExecuteScalar());
+            return data;
+        }
+
+        public string getNameByIdCustomer(DataGridView dataGridView)
+        {
+            int CurrentRow = dataGridView.SelectedCells[0].RowIndex;
+            string valueId = dataGridView[0, CurrentRow].Value.ToString();
+            SQLiteCommand getData = connection.CreateCommand();
+            getData.CommandText = "select IdCustomer from Request WHERE Id = '" + valueId + "'";
+            string id = Convert.ToString(getData.ExecuteScalar());
+            request.IdCustomer = Convert.ToInt32(id);
+            SQLiteCommand getData1 = connection.CreateCommand();
+            getData1.CommandText = "select FIO from Customers WHERE Id = '" + request.IdCustomer + "'";
+            string data = Convert.ToString(getData1.ExecuteScalar());
+            return data;
         }
         private string convertToUnix(DateTime date)
         {

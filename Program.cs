@@ -16,7 +16,7 @@ namespace Klinishev_CourseProject_View
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPriceList());
+            Application.Run(new FormAuthorization());
         }
     }
 }

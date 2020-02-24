@@ -191,7 +191,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView);
             this.Name = "FormCustomer";
-            this.Text = "FormCustomer";
+            this.Text = "Работа с заказчиками";
             this.Load += new System.EventHandler(this.FormCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);

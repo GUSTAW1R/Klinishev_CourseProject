@@ -99,7 +99,7 @@
             this.Controls.Add(this.comboBoxCustomer);
             this.Controls.Add(this.dateTimePicker1);
             this.Name = "FormAddRequest";
-            this.Text = "FormAddDelRequest";
+            this.Text = "Добавление заявки";
             this.Load += new System.EventHandler(this.FormAddRequest_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
