@@ -29,6 +29,7 @@ namespace Klinishev_CourseProject_View
             try
             {
                 customerController.AddCustomer(textBoxFIO.Text, textBoxMail.Text, maskedTextBoxINN.Text);
+                MessageBox.Show(maskedTextBoxINN.Text.Length.ToString());
             }
             catch
             {

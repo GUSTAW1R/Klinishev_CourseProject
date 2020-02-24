@@ -35,7 +35,6 @@ namespace Klinishev_CourseProject_View
             {
                 MessageBox.Show("Ошибка при добавлении");
             }
-            dataGridView.DataSource = requestController.getRequestList();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -59,6 +58,7 @@ namespace Klinishev_CourseProject_View
             {
                 MessageBox.Show("Ошибка при удалении заявки", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            dataGridView.DataSource = requestController.getRequestList();
         }
 
         private void buttonINN_Click(object sender, EventArgs e)
@@ -74,6 +74,11 @@ namespace Klinishev_CourseProject_View
         private void buttonFind_Click(object sender, EventArgs e)
         {
             dataGridView.DataSource = requestController.getRequestByProduct(textBox1.Text);
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView.DataSource = requestController.getRequestList();
         }
     }
 }
