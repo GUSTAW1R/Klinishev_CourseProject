@@ -32,7 +32,7 @@ namespace Klinishev_CourseProject_Controllers
                 SQLiteDataReader r = sqlcmd.ExecuteReader();
                 while (r.Read())
                 {
-                    RequestList.Add(new Customer { Id = Convert.ToInt32(r["Id"]), FIO = Convert.ToString(r["FIO"]), Email = Convert.ToString(r["Email"]), INN = Convert.ToInt64(r["INN"])});
+                    RequestList.Add(new Customer { Id = Convert.ToInt32(r["Id"]), FIO = Convert.ToString(r["FIO"]), Email = Convert.ToString(r["Email"]), INN = Convert.ToString(r["INN"])});
                 }
             }
             return RequestList;
@@ -42,7 +42,7 @@ namespace Klinishev_CourseProject_Controllers
         {
             if(INN.Length == 12)
             {
-                customer.FIO = FIO; customer.Email = Email; customer.INN = Convert.ToInt64(INN);
+                customer.FIO = FIO; customer.Email = Email; customer.INN = Convert.ToString(INN);
                 SQLiteCommand getMaxID = connection.CreateCommand();
                 getMaxID.CommandText = "select MAX(Id) from Customers";
                 try
@@ -80,12 +80,13 @@ namespace Klinishev_CourseProject_Controllers
             List<Customer> RequestList = new List<Customer>();
             using (SQLiteCommand sqlcmd = connection.CreateCommand())
             {
-                sqlcmd.CommandText = @"SELECT Id, FIO, Email, INN FROM Customers WHERE INN = "+INN+"";
+                customer.INN = Convert.ToString(INN);
+                sqlcmd.CommandText = @"SELECT Id, FIO, Email, INN FROM Customers WHERE INN = "+ customer.INN + "";
                 sqlcmd.CommandType = CommandType.Text;
                 SQLiteDataReader r = sqlcmd.ExecuteReader();
                 while (r.Read())
                 {
-                    RequestList.Add(new Customer { Id = Convert.ToInt32(r["Id"]), FIO = Convert.ToString(r["FIO"]), Email = Convert.ToString(r["Email"]), INN = Convert.ToInt64(r["INN"]) });
+                    RequestList.Add(new Customer { Id = Convert.ToInt32(r["Id"]), FIO = Convert.ToString(r["FIO"]), Email = Convert.ToString(r["Email"]), INN = Convert.ToString(r["INN"]) });
                 }
             }
             return RequestList;

@@ -35,6 +35,9 @@ namespace Klinishev_CourseProject_View
                 MessageBox.Show("Ошибка при добавлении поставщика, проверьте правильность введённых данных", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             dataGridView.DataSource = customerController.getCustomerList();
+            textBoxFIO.Clear();
+            textBoxMail.Clear();
+            maskedTextBoxINN.Clear();
         }
 
         private void buttonDel_Click(object sender, EventArgs e)

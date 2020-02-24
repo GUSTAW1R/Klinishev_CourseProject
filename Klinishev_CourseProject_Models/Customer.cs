@@ -16,6 +16,6 @@ namespace Klinishev_CourseProject_Models
         [DisplayName("Почтовый адрес заказчика")]
         public string Email { set; get; }
         [DisplayName("ИНН заказчика")]
-        public long INN { set; get; }
+        public string INN { set; get; }
     }
 }
